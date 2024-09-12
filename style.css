@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.light {
+  --background: 250, 250, 250;
+  --text: 17, 17, 17;
+  --input: 163, 163, 163;
+  --inputBackground: 245, 245, 245;
+  --inputRing: 38, 38, 38;
+}
+
+.dark {
+  --background: 17, 17, 17;
+  --text: 250, 250, 250;
+  --input: 212, 212, 216;
+  --inputBackground: 38, 38, 38;
+  --inputRing: 245, 245, 245;
+}
+
+body {
+  @apply font-mono flex flex-col m-20 bg-background text-text;
+}
+
+button {
+  @apply inline-flex items-center justify-center rounded-md text-sm font-extrabold transition-colors bg-text text-background hover:bg-text/85 h-10 px-4 py-2;
+}
+
+input {
+  @apply flex w-64 rounded-md border border-input bg-inputBackground px-3 py-2 text-sm placeholder:text-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inputRing focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ring-offset-background;
+}

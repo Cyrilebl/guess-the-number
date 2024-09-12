@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the number</title>
+  </head>
+  <body class="light">
+    <header class="relative">
+      <h1
+        id="title"
+        class="cursor-pointer text-center text-5xl font-black uppercase"
+      >
+        Guess the number
+      </h1>
+      <div class="absolute right-0 top-3">
+        <input
+          checked
+          id="theme-toggle-btn"
+          type="checkbox"
+          class="peer h-5 w-11 cursor-pointer appearance-none rounded-full bg-text transition-colors duration-300 checked:bg-text"
+        />
+        <label
+          for="theme-toggle-btn"
+          class="absolute left-0 top-0 h-5 w-5 cursor-pointer rounded-full border border-input bg-background shadow-sm transition-transform duration-300 peer-checked:translate-x-6"
+        >
+        </label>
+      </div>
+    </header>
+    <div
+      id="startContainer"
+      class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
+    >
+      <p class="mb-8 text-center">
+        The application will generate a random number.<br />
+        Your goal is to guess it in the fewest possible attempts.
+      </p>
+      <button id="start" type="button">Start</button>
+    </div>
+    <div id="gameContainer" class="hidden">
+      <div
+        class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
+      >
+        <p class="mb-8">Try to find a number between 0 and 500.</p>
+        <p class="mb-4">Attempts : <span id="attempts">0</span></p>
+        <form id="guessForm" action="" method="post" class="flex gap-6">
+          <label for="guess"></label>
+          <input
+            type="number"
+            id="guess"
+            name="guess"
+            placeholder="Enter your guess"
+            required
+          />
+          <button id="submit" type="submit">Submit</button>
+        </form>
+        <div id="result" class="mb-4 mt-12"></div>
+        <div
+          id="rectangle"
+          class="relative h-10 w-[500px] rounded-md border border-text bg-background"
+        >
+          <div class="mt-1 h-7 w-7 shrink-0 grow-0 rounded-full"></div>
+          <div class="mt-4 flex justify-between text-xs">
+            <p>0</p>
+            <p>100</p>
+            <p>200</p>
+            <p>300</p>
+            <p>400</p>
+            <p>500</p>
+          </div>
+        </div>
+        <button id="replay" type="button" class="mt-12 hidden">Replay</button>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
